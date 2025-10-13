@@ -24,7 +24,7 @@ type Location = {
 };
 
 type CountryConfig = {
-  code: string; // ISO country name as appears in topojson (e.g., "Argentina")
+  code: string;
   center: [number, number];
   zoom: number;
   locations: Location[];
@@ -41,33 +41,102 @@ const COUNTRIES: CountryConfig[] = [
     background: "/argentina.jpg",
     locations: [
       {
-        name: "La Quiaca (LQC)",
-        coordinates: [-65.5775, -22.1844],
+        name: "Rio Cuarto (SAOC)",
+        coordinates: [-64.2083, -33.0858],
         description:
-          "VIP handling, fueling coordination, permits, and ground support in La Quiaca.",
-        contact:
-          "Available via coordination from Jujuy (Gobernador Horacio Guzmán International Airport – JUJ).",
-        nearestAirport:
-          "La Quiaca Airport (LQC / SASQ) – general aviation, limited infrastructure.",
-        telephone: "[+54 xxx xxx xxxx]",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/laquiaca",
-        openingHours:
-          "Summer\nMon–Fri: 11:00 – 23:00\nSat: 11:00 – 21:00\nSun: 12:00 – 21:00\nWinter\nMon–Fri: 12:00 – 22:00\nSat: 12:00 – 20:00\nSun: 13:00 – 20:00",
-        background: "/laquiaca.jpg",
+          "Agent/Services on request & Fuel sales at Rio Cuarto Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Rio Cuarto Airport (SAOC)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1000-0000 UTC On Request",
+        background: "/riocuarto.jpg",
         image: null,
       },
       {
-        name: "Cordoba (COR)",
-        coordinates: [-64.1888, -31.4201],
-        description: "Regional ops and on-demand concierge services.",
+        name: "Gualeguaychu (SAAG)",
+        coordinates: [-58.6131, -33.0103],
+        description: "FBO services at Gualeguaychu Airport.",
         contact: "Available via coordination.",
-        nearestAirport: "Cordoba Airport",
-        telephone: "+54 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/cordoba",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/cordoba.jpg",
+        nearestAirport: "Gualeguaychu Airport (SAAG)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1000-0000 UTC On Request",
+        background: "/gualeguaychu.jpg",
+        image: null,
+      },
+      {
+        name: "Resistencia (SARE)",
+        coordinates: [-59.0561, -27.4491],
+        description:
+          "FBO & Fuel sales services at Resistencia International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Resistencia International Airport (SARE)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/resistencia.jpg",
+        image: null,
+      },
+      {
+        name: "Ushuaia (SAWG)",
+        coordinates: [-68.2958, -54.8433],
+        description:
+          "FBO & Fuel sales services at Piloto Civil Norberto Fernandez International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Piloto Civil Norberto Fernandez International Airport (SAWG)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/ushuaia.jpg",
+        image: null,
+      },
+      {
+        name: "Ushuaia (SAWH)",
+        coordinates: [-68.3128, -54.8433],
+        description:
+          "FBO & Fuel sales services at Malvinas Argentinas International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Malvinas Argentinas International Airport (SAWH)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100-1700 UTC On Request",
+        background: "/ushuaia2.jpg",
+        image: null,
+      },
+      {
+        name: "Esquel (SAVE)",
+        coordinates: [-71.1395, -42.9071],
+        description:
+          "FBO & Fuel sales services at Brigadier General Antonio Parodi International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Brigadier General Antonio Parodi International Airport (SAVE)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100-2200 UTC On Request",
+        background: "/esquel.jpg",
+        image: null,
+      },
+      {
+        name: "San Martín de los Andes (SAZY)",
+        coordinates: [-71.1697, -40.0758],
+        description:
+          "FBO & Fuel sales services at Aviador Carlos Campos Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Aviador Carlos Campos Airport (SAZY)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200-2100 UTC On Request",
+        background: "/sanmartin.jpg",
         image: null,
       },
     ],
@@ -79,16 +148,176 @@ const COUNTRIES: CountryConfig[] = [
     background: "/peru.jpg",
     locations: [
       {
-        name: "Lima (LIM)",
-        coordinates: [-77.0428, -12.0464],
-        description: "Comprehensive aviation support in Lima.",
+        name: "Jorge Chávez International (SPJC)",
+        coordinates: [-77.1143, -12.0219],
+        description:
+          "FBO & Fuel sales at Jorge Chávez International Airport (Lima). Fuel: Jet-A",
         contact: "Available via coordination.",
-        nearestAirport: "Lima Airport",
-        telephone: "+51 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/lima",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/lima.jpg",
+        nearestAirport: "Jorge Chávez International Airport (SPJC)",
+        telephone: "+51 936 819 429",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/jorgechavez.jpg",
+        image: null,
+      },
+      {
+        name: "Alejandro Velasco Astete (SPZO)",
+        coordinates: [-71.9388, -13.5357],
+        description:
+          "FBO & Fuel sales at Alejandro Velasco Astete International Airport (Cusco). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Alejandro Velasco Astete International Airport (SPZO)",
+        telephone: "+51 936 819 430",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1000 - 0100",
+        background: "/velascoastete.jpg",
+        image: null,
+      },
+      {
+        name: "Rodríguez Ballón (SPQU)",
+        coordinates: [-71.5831, -16.3411],
+        description:
+          "FBO & Fuel sales at Rodríguez Ballón International Airport (Arequipa). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Rodríguez Ballón International Airport (SPQU)",
+        telephone: "+51 936 819 431",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 0300",
+        background: "/rodriguezballon.jpg",
+        image: null,
+      },
+      {
+        name: "Carlos Martínez de Pinillos (SPRU)",
+        coordinates: [-79.1088, -8.0814],
+        description:
+          "FBO & Fuel sales at Capitán FAP Carlos Martínez de Pinillos International Airport (Trujillo). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Capitán FAP Carlos Martínez de Pinillos International Airport (SPRU)",
+        telephone: "+51 936 819 432",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 0400",
+        background: "/martinezpinillos.jpg",
+        image: null,
+      },
+      {
+        name: "Inca Manco Cápac (SPJL)",
+        coordinates: [-70.1582, -15.4671],
+        description:
+          "FBO & Fuel sales at Inca Manco Cápac International Airport (Juliaca). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Inca Manco Cápac International Airport (SPJL)",
+        telephone: "+51 936 819 433",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 2300",
+        background: "/incamancocapac.jpg",
+        image: null,
+      },
+      {
+        name: "Pedro Canga Rodríguez (SPME)",
+        coordinates: [-80.3814, -3.5525],
+        description:
+          "FBO & Fuel sales at Pedro Canga Rodríguez Airport (Tumbes). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Pedro Canga Rodríguez Airport (SPME)",
+        telephone: "+51 936 819 434",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200 - 0000",
+        background: "/pedrocanga.jpg",
+        image: null,
+      },
+      {
+        name: "Capitán FAP Renán Elías Olivera (SPSO)",
+        coordinates: [-76.2203, -13.7449],
+        description:
+          "FBO & Fuel sales at Aeropuerto Internacional Capitán FAP Renán Elías Olivera (Pisco). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Aeropuerto Internacional Capitán FAP Renán Elías Olivera (SPSO)",
+        telephone: "+51 936 819 435",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 hs",
+        background: "/renaneliasolivera.jpg",
+        image: null,
+      },
+      {
+        name: "José A. Quiñones Gonzales (SPHI)",
+        coordinates: [-79.8281, -6.7875],
+        description:
+          "FBO & Fuel sales at Capitán FAP José A. Quiñones Gonzales International Airport (Chiclayo). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Capitán FAP José A. Quiñones Gonzales International Airport (SPHI)",
+        telephone: "+51 936 819 435",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 0400",
+        background: "/josequinones.jpg",
+        image: null,
+      },
+      {
+        name: "Francisco Secada Vignetta (SPQT)",
+        coordinates: [-73.3088, -3.7847],
+        description:
+          "FBO & Fuel sales at Coronel FAP Francisco Secada Vignetta International Airport (Iquitos). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Coronel FAP Francisco Secada Vignetta International Airport (SPQT)",
+        telephone: "+51 936 819 436",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1000 - 0300",
+        background: "/franciscosecada.jpg",
+        image: null,
+      },
+      {
+        name: "Guillermo Concha Iberico (SPUR)",
+        coordinates: [-80.6167, -5.2058],
+        description:
+          "FBO & Fuel sales at Capitán FAP Guillermo Concha Iberico International Airport (Piura). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport:
+          "Capitán FAP Guillermo Concha Iberico International Airport (SPUR)",
+        telephone: "+51 936 819 437",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200 - 0200",
+        background: "/guillermoconcha.jpg",
+        image: null,
+      },
+      {
+        name: "Capitán FAP Renán Elías Olivera (SPCL)",
+        coordinates: [-74.5743, -8.3779],
+        description:
+          "FBO & Fuel sales at Capitán FAP Renán Elías Olivera Airport (Pisco). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Capitán FAP Renán Elías Olivera Airport (SPCL)",
+        telephone: "+51 936 819 438",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24Hs",
+        background: "/renaneliasoliverapucallpa.jpg",
+        image: null,
+      },
+      {
+        name: "Jaime Montreuil Morales (SPTN)",
+        coordinates: [-75.9967, -9.2895],
+        description:
+          "FBO & Fuel sales at Teniente FAP Jaime Montreuil Morales Airport (Tingo María). Fuel: Jet-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Teniente FAP Jaime Montreuil Morales Airport (SPTN)",
+        telephone: "+51 936 819 439",
+        email: "ops@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 0300",
+        background: "/jaimemontreuil.jpg",
         image: null,
       },
     ],
@@ -100,29 +329,101 @@ const COUNTRIES: CountryConfig[] = [
     background: "/colombia.jpg",
     locations: [
       {
-        name: "Bogotá (BOG)",
-        coordinates: [-74.0721, 4.711],
-        description: "Operations centered in Bogotá.",
+        name: "Palonegro (SKBG)",
+        coordinates: [-73.1847, 7.125],
+        description:
+          "FBO & Fuel sales at Palonegro International Airport. Fuel: JET-A & AVGAS",
         contact: "Available via coordination.",
-        nearestAirport: "Bogota Airport",
-        telephone: "+57 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/bogota",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/bogota.jpg",
+        nearestAirport: "Palonegro International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1030 - 0430 UTC",
+        background: "/palonegro.jpg",
         image: null,
       },
       {
-        name: "Medellín (MDE)",
-        coordinates: [-75.5906, 6.219],
-        description: "Support for executive movements in Medellín.",
+        name: "El Dorado (SKBO)",
+        coordinates: [-74.1472, 4.7014],
+        description:
+          "FBO & Fuel sales at El Dorado International Airport. Fuel: JET-A",
         contact: "Available via coordination.",
-        nearestAirport: "Medellin Airport",
-        telephone: "+57 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/medellin",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/medellin.jpg",
+        nearestAirport: "El Dorado International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "skbo.ops@arsot.com -\nfuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/eldorado.jpg",
+        image: null,
+      },
+      {
+        name: "Ernesto Cortissoz (SKBQ)",
+        coordinates: [-74.7806, 10.8894],
+        description:
+          "Ground Handling & Fuel sales at Ernesto Cortissoz International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Ernesto Cortissoz International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "skbq.ops@arsot.com -\nfuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/ernestocortissoz.jpg",
+        image: null,
+      },
+      {
+        name: "Alfonso Bonilla Aragon (SKCL)",
+        coordinates: [-76.3814, 3.5431],
+        description:
+          "Ground Handling & Fuel sales at Alfonso Bonilla Aragon International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Alfonso Bonilla Aragon International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "skcl.ops@arsot.com -\nfuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/alfonsobonilla.jpg",
+        image: null,
+      },
+      {
+        name: "Alfredo Vasquez Cobo (SKLT)",
+        coordinates: [-75.8256, 8.8236],
+        description:
+          "Ground Handling & Fuel sales at Alfredo Vasquez Cobo International Airport. Fuel: JET-A",
+        contact: "Available via coordination.",
+        nearestAirport: "Alfredo Vasquez Cobo International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "sklt.ops@arsot.com -\nfuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/alfredovasquez.jpg",
+        image: null,
+      },
+      {
+        name: "Jose Maria Cordoba (SKRG)",
+        coordinates: [-75.4231, 6.1644],
+        description:
+          "FBO & Fuel sales at Jose Maria Cordoba International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Jose Maria Cordoba International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "skrg.ops@arsot.com -\nfuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/josemariacordoba.jpg",
+        image: null,
+      },
+      {
+        name: "Simon Bolivar (SKSM)",
+        coordinates: [-74.2308, 11.1194],
+        description:
+          "Ground Handling & Fuel sales at Simon Bolivar International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Simon Bolivar International Airport",
+        telephone: "HQ: +57-601-7564080\nIntl 24Hs: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1100 - 0500 UTC",
+        background: "/simonbolivar.jpg",
         image: null,
       },
     ],
@@ -134,16 +435,59 @@ const COUNTRIES: CountryConfig[] = [
     background: "/costarica.jpg",
     locations: [
       {
-        name: "San José (SJO)",
-        coordinates: [-84.2041, 9.9939],
-        description: "Reliable services in San José.",
+        name: "Juan Santamaría International (MROC)",
+        coordinates: [-84.2105, 10.0014],
+        description:
+          "FBO & Fuel sales at Juan Santamaría International Airport. Fuel: JET-A & AVGAS",
         contact: "Available via coordination.",
-        nearestAirport: "San Jose Airport",
-        telephone: "+506 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/sanjose",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/sanjose.jpg",
+        nearestAirport: "Juan Santamaría International Airport (MROC)",
+        telephone: "HQ: +506 4070 0011\nIntl 24Hs: +1-888-509-1468",
+        email: "mroc.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/juansantamaria.jpg",
+        image: null,
+      },
+      {
+        name: "Daniel Oduber Quirós (MRLB)",
+        coordinates: [-85.5444, 10.5933],
+        description:
+          "FBO & Fuel sales at Daniel Oduber Quirós International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Daniel Oduber Quirós International Airport (MRLB)",
+        telephone: "HQ: +506 4070 0011\nIntl 24Hs: +1-888-509-1468",
+        email: "mrlb.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200 - 0600 UTC",
+        background: "/danieloduber.jpg",
+        image: null,
+      },
+      {
+        name: "Tobías Bolaños (MRPV)",
+        coordinates: [-84.1397, 9.9571],
+        description:
+          "FBO & Fuel sales at Tobías Bolaños International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Tobías Bolaños International Airport (MRPV)",
+        telephone: "HQ: +506 4070 0011\nIntl 24Hs: +1-888-509-1468",
+        email: "mrpv.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200 - 2359 UTC",
+        background: "/tobiasbolanos.jpg",
+        image: null,
+      },
+      {
+        name: "Limon International (MRLM)",
+        coordinates: [-83.0222, 9.9578],
+        description:
+          "FBO & Fuel sales at Limon International Airport. Fuel: JET-A & AVGAS",
+        contact: "Available via coordination.",
+        nearestAirport: "Limon International Airport (MRLM)",
+        telephone: "HQ: +506 4070 0011\nIntl 24Hs: +1-888-509-1468",
+        email: "mrlm.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "1200 - 2359 UTC",
+        background: "/limon.jpg",
         image: null,
       },
     ],
@@ -155,16 +499,45 @@ const COUNTRIES: CountryConfig[] = [
     background: "/uruguay.jpg",
     locations: [
       {
-        name: "Montevideo (MVD)",
-        coordinates: [-56.1645, -34.9011],
-        description: "Support in Montevideo.",
+        name: "Carrasco (SUMU)",
+        coordinates: [-56.0308, -34.8384],
+        description:
+          "FBO & Fuel sales services at Carrasco International Airport.",
         contact: "Available via coordination.",
-        nearestAirport: "Montevideo Airport",
-        telephone: "+598 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/montevideo",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/montevideo.jpg",
+        nearestAirport: "Carrasco International Airport (SUMU)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "sumu.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/carrasco.jpg",
+        image: null,
+      },
+      {
+        name: "Laguna del Sauce (SULS)",
+        coordinates: [-54.9194, -34.8625],
+        description:
+          "FBO & Fuel sales services at Laguna del Sauce International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Laguna del Sauce International Airport (SULS)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "suls.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/lagunadelsauce.jpg",
+        image: null,
+      },
+      {
+        name: "Santa Bernardina (SUDU)",
+        coordinates: [-56.4992, -33.3589],
+        description:
+          "FBO & Fuel sales services at Santa Bernardina International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Santa Bernardina International Airport (SUDU)",
+        telephone: "HQ: +54-11-52582113 - Ext 1, Intl: +1-888-509-1468",
+        email: "ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/santabernardina.jpg",
         image: null,
       },
     ],
@@ -176,16 +549,31 @@ const COUNTRIES: CountryConfig[] = [
     background: "/paraguay.jpg",
     locations: [
       {
-        name: "Asunción (ASU)",
-        coordinates: [-57.5759, -25.2637],
-        description: "Aviation solutions in Asunción.",
+        name: "Silvio Pettirossi (SGAS)",
+        coordinates: [-57.3079, -25.2417],
+        description:
+          "FBO & Fuel sales services at Silvio Pettirossi International Airport.",
         contact: "Available via coordination.",
-        nearestAirport: "Asuncion Airport",
-        telephone: "+595 xxx xxx xxxx",
-        email: "handling@arsot.aero",
-        website: "arsot.aero/asuncion",
-        openingHours: "Mon-Fri: 08:00 - 18:00",
-        background: "/asuncion.jpg",
+        nearestAirport: "Silvio Pettirossi International Airport (SGAS)",
+        telephone: "HQ: 595-98-2705820, Intl: +1-888-509-1468",
+        email: "sgas.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/silviopettirossi.jpg",
+        image: null,
+      },
+      {
+        name: "Guaraní (SGES)",
+        coordinates: [-57.3079, -25.2417],
+        description:
+          "FBO & Fuel sales services at Guaraní International Airport.",
+        contact: "Available via coordination.",
+        nearestAirport: "Guaraní International Airport (SGES)",
+        telephone: "HQ: 595-98-2705820, Intl: +1-888-509-1468",
+        email: "sges.ops@arsot.com - fuel@arsot.com",
+        website: "www.arsot.aero",
+        openingHours: "24 Hs",
+        background: "/guarani.jpg",
         image: null,
       },
     ],
@@ -199,7 +587,6 @@ export default function InteractiveMap() {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(
     null
   );
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollRef = useRef<HTMLDivElement>(null);
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgroundImages = ["/bg1.jpg", "/bg2.jpg", "/bg3.jpg"];
@@ -227,8 +614,8 @@ export default function InteractiveMap() {
 
   // Animate map transitions
   useEffect(() => {
-    const duration = 400; // 400ms transition
-    const steps = 30; // 30 frames
+    const duration = 600;
+    const steps = 24;
     const stepDuration = duration / steps;
 
     const startCenter: [number, number] = [
@@ -243,7 +630,6 @@ export default function InteractiveMap() {
       currentStep++;
       const progress = currentStep / steps;
 
-      // Ease-in-out function
       const easeInOutCubic = (t: number) =>
         t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
@@ -318,7 +704,7 @@ export default function InteractiveMap() {
         dangerouslySetInnerHTML={{
           __html: `
           .scrollable::-webkit-scrollbar {
-            width: 2px;
+            width: 1px;
           }
           .scrollable::-webkit-scrollbar-track {
             background: transparent;
@@ -331,7 +717,7 @@ export default function InteractiveMap() {
       />
       <div className="relative w-full h-screen overflow-hidden">
         <div className="absolute top-4 right-4 text-white z-10">
-          <div className="choose_loc flex flex-col items-start w-[17.125rem] border border-white bg-black/[.32] mt-10">
+          <div className="scrollable flex flex-col items-start w-[17.125rem] border border-white bg-black/[.32] mt-10 max-h-[70vh] overflow-y-auto overflow-x-hidden">
             <div className="flex items-center gap-4 self-stretch py-2 px-4 h-12">
               <svg
                 width={24}
@@ -388,7 +774,7 @@ export default function InteractiveMap() {
                       </svg>
                     )}
                   </div>
-                  <div className="text-white font-['Montserrat'] font-medium leading-[120%] uppercase flex-1">
+                  <div className="text-white font-['Montserrat'] font-medium leading-[120%] uppercase w-44">
                     {c.code}
                   </div>
                   <svg

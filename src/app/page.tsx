@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import MessageUs from "./components/MessageUs";
 import InteractiveMap from "./components/InteractiveMap";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -69,6 +70,7 @@ export default function Home() {
         </div>
       </div>
       <InteractiveMap />
+      <Footer />
     </div>
   );
 }

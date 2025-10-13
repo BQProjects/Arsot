@@ -15,57 +15,27 @@ const Header = () => (
       </div>
       <div className="flex items-center gap-8">
         <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
-          <span className="text-base tracking-wide">About Us</span>
-          <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
-        </div>
-        <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
           <span className="text-base tracking-wide">Services</span>
           <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
         </div>
         <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
-          <span className="text-base tracking-wide">Blogs</span>
-          <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
-        </div>
-        <div className="flex justify-center items-center gap-1">
-          <div className="body-3 text-white font-['Montserrat'] font-medium leading-[120%] uppercase">
-            REQUEST A QUOTE
-          </div>
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.66344 6.44616L9.51969 12.2099C9.64747 12.3363 9.81995 12.4072 9.99969 12.4072C10.1794 12.4072 10.3519 12.3363 10.4797 12.2099L16.3372 6.44741C16.4658 6.32107 16.6388 6.25027 16.8191 6.25027C16.9993 6.25027 17.1724 6.32107 17.3009 6.44741C17.3643 6.50914 17.4146 6.58291 17.4489 6.66438C17.4833 6.74585 17.501 6.83337 17.501 6.92179C17.501 7.01021 17.4833 7.09773 17.4489 7.1792C17.4146 7.26067 17.3643 7.33444 17.3009 7.39616L11.4459 13.1587C11.0603 13.5373 10.5414 13.7495 10.0009 13.7495C9.46047 13.7495 8.9416 13.5373 8.55594 13.1587L2.70094 7.39616C2.63744 7.33442 2.58696 7.26058 2.55249 7.17899C2.51803 7.0974 2.50027 7.00973 2.50027 6.92116C2.50027 6.8326 2.51803 6.74492 2.55249 6.66334C2.58696 6.58175 2.63744 6.5079 2.70094 6.44616C2.82951 6.31982 3.00256 6.24902 3.18282 6.24902C3.36308 6.24902 3.53612 6.31982 3.66469 6.44616"
-              fill="white"
-            />
-          </svg>
-        </div>
-        <div className="flex justify-center items-center gap-1">
-          <div className="body-4 text-white font-['Montserrat'] font-medium leading-[120%] uppercase">
-            RESOURCES
-          </div>
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.66344 6.44616L9.51969 12.2099C9.64747 12.3363 9.81995 12.4072 9.99969 12.4072C10.1794 12.4072 10.3519 12.3363 10.4797 12.2099L16.3372 6.44741C16.4658 6.32107 16.6388 6.25027 16.8191 6.25027C16.9993 6.25027 17.1724 6.32107 17.3009 6.44741C17.3643 6.50914 17.4146 6.58291 17.4489 6.66438C17.4833 6.74585 17.501 6.83337 17.501 6.92179C17.501 7.01021 17.4833 7.09773 17.4489 7.1792C17.4146 7.26067 17.3643 7.33444 17.3009 7.39616L11.4459 13.1587C11.0603 13.5373 10.5414 13.7495 10.0009 13.7495C9.46047 13.7495 8.9416 13.5373 8.55594 13.1587L2.70094 7.39616C2.63744 7.33442 2.58696 7.26058 2.55249 7.17899C2.51803 7.0974 2.50027 7.00973 2.50027 6.92116C2.50027 6.8326 2.51803 6.74492 2.55249 6.66334C2.58696 6.58175 2.63744 6.5079 2.70094 6.44616C2.82951 6.31982 3.00256 6.24902 3.18282 6.24902C3.36308 6.24902 3.53612 6.31982 3.66469 6.44616"
-              fill="white"
-            />
-          </svg>
-        </div>
-        <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
-          <span className="text-base tracking-wide">Location</span>
+          <span className="text-base tracking-wide">Our Location</span>
           <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
         </div>
         <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
-          <span className="text-base tracking-wide">Contact Us</span>
+          <span className="text-base tracking-wide">CREW BRIEF</span>
+          <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
+        </div>
+        <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <span className="text-base tracking-wide">QUOTE</span>
+          <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
+        </div>
+        <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <span className="text-base tracking-wide">About Us</span>
+          <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
+        </div>
+        <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <span className="text-base tracking-wide">CONTACT US</span>
           <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
         </div>
         <div className="flex justify-center items-center gap-3 py-3 px-6 h-14 bg-[#f90]">
