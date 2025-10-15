@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const Footer = () => (
-  <div className="flex-shrink-0 w-full bg-black pb-8 pt-8">
+  <div className="flex-shrink-0 w-full bg-black pb-8 pt-14">
     <Image
       src="/logo.svg"
       width={180}
