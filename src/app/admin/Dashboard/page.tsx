@@ -75,8 +75,8 @@ export default function AdminDashboard() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 pt-24 px-14">
-          <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 pt-24 px-16">
+          <div className=" mx-auto">
             {/* Welcome Section */}
             <div className="mb-16">
               <h1 className="text-white font-['PlayfairDisplay'] text-[3.5rem] leading-[120%] mb-4">

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -43,7 +44,10 @@ const Footer = () => (
           <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div
+        className="flex items-center gap-2"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <svg
           width={32}
           height={32}

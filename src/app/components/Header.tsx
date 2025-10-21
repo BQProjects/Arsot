@@ -9,8 +9,10 @@ const Header = () => {
   return (
     <div className="flex flex-col flex-shrink-0 items-center gap-6 py-4 px-0 w-full h-24 border-b-[0.8px] border-b-[#f5f5f5] bg-transparent">
       <div className="flex justify-between items-center self-stretch py-0 px-14">
-        <div className="w-[9.5rem] h-[3.125rem] bg-cover"
-        onClick={() => router.push("/")}>
+        <div
+          className="w-[9.5rem] h-[3.125rem] bg-cover"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/logo.svg"
             width={180}
@@ -34,7 +36,10 @@ const Header = () => {
             <span className="text-base tracking-wide">Our Location</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
-          <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <div
+            className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white"
+            onClick={() => router.push("/CrewBrief")}
+          >
             <span className="text-base tracking-wide">CREW BRIEF</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
@@ -42,7 +47,10 @@ const Header = () => {
             <span className="text-base tracking-wide">QUOTE</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
-          <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <div
+            className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white"
+            onClick={() => router.push("/AboutUs")}
+          >
             <span className="text-base tracking-wide">About Us</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>

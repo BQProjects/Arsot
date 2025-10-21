@@ -888,7 +888,7 @@ const PressRoomAdminScreen = () => {
                           {pressRelease.summary || "No summary"}
                         </div>
                         <div className="flex items-center gap-2 p-2">
-                          <button
+                          {/* <button
                             onClick={() => handleView(pressRelease)}
                             className="p-1 hover:bg-white/10 rounded"
                             title="View"
@@ -909,7 +909,7 @@ const PressRoomAdminScreen = () => {
                                 fill="#8C8C8C"
                               />
                             </svg>
-                          </button>
+                          </button> */}
                           <button
                             onClick={() => handleEdit(pressRelease)}
                             className="p-1 hover:bg-white/10 rounded"
