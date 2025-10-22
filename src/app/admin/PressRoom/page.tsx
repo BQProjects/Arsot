@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -360,12 +361,27 @@ const PressRoomAdminScreen = () => {
                         }
                         fill
                         alt="Banner preview"
-                        className="object-cover rounded"
+                        className="object-cover rounded group-hover:blur-sm transition-all duration-300"
                       />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded flex items-center justify-center">
-                        <button type="button" className="text-white">
-                          Change Banner
-                        </button>
+                      <div className="absolute inset-0 bg-[#AFAFAF] opacity-0 hover:opacity-80 transition-opacity duration-300 rounded flex flex-col items-center justify-center">
+                        <label
+                          className="w-24 text-black text-center items-center font-medium font-['Montserrat'] text-xs leading-[150%] cursor-pointer"
+                          onClick={openBannerPicker}
+                        >
+                          Click to change photo
+                        </label>
+                        <svg
+                          width={17}
+                          height={16}
+                          viewBox="0 0 17 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.5 13.5H14.5M4.275 8.217L10.492 2L12.614 4.121L6.397 10.338L3.83 10.894L4.275 8.217Z"
+                            stroke="#000000"
+                          />
+                        </svg>
                       </div>
                     </div>
                   ) : (
@@ -471,13 +487,41 @@ const PressRoomAdminScreen = () => {
                           }
                         >
                           {section.leftImage ? (
-                            <Image
-                              src={section.leftImage}
-                              width={120}
-                              height={80}
-                              alt="Left section image"
-                              className="object-cover rounded"
-                            />
+                            <div className="relative w-full h-full group">
+                              <Image
+                                src={section.leftImage}
+                                width={120}
+                                height={80}
+                                alt="Left section image"
+                                className="object-cover rounded w-full h-full group-hover:blur-sm transition-all duration-300"
+                              />
+                              <div className="absolute inset-0 bg-[#AFAFAF] opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded flex flex-col items-center justify-center">
+                                <label
+                                  className="w-24 text-black text-center items-center font-medium font-['Montserrat'] text-xs leading-[150%] cursor-pointer"
+                                  onClick={() =>
+                                    document
+                                      .getElementById(
+                                        `left-image-input-${index}`
+                                      )
+                                      ?.click()
+                                  }
+                                >
+                                  Click to change photo
+                                </label>
+                                <svg
+                                  width={17}
+                                  height={16}
+                                  viewBox="0 0 17 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2.5 13.5H14.5M4.275 8.217L10.492 2L12.614 4.121L6.397 10.338L3.83 10.894L4.275 8.217Z"
+                                    stroke="#000000"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
                           ) : (
                             <div className="flex flex-col justify-center items-center gap-2">
                               <svg
@@ -528,13 +572,41 @@ const PressRoomAdminScreen = () => {
                           }
                         >
                           {section.rightImage ? (
-                            <Image
-                              src={section.rightImage}
-                              width={120}
-                              height={80}
-                              alt="Right section image"
-                              className="object-cover rounded"
-                            />
+                            <div className="relative w-full h-full group">
+                              <Image
+                                src={section.rightImage}
+                                width={120}
+                                height={80}
+                                alt="Right section image"
+                                className="object-cover rounded w-full h-full group-hover:blur-sm transition-all duration-300"
+                              />
+                              <div className="absolute inset-0 bg-[#AFAFAF] opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded flex flex-col items-center justify-center">
+                                <label
+                                  className="w-24 text-black text-center items-center font-medium font-['Montserrat'] text-xs leading-[150%] cursor-pointer"
+                                  onClick={() =>
+                                    document
+                                      .getElementById(
+                                        `right-image-input-${index}`
+                                      )
+                                      ?.click()
+                                  }
+                                >
+                                  Click to change photo
+                                </label>
+                                <svg
+                                  width={17}
+                                  height={16}
+                                  viewBox="0 0 17 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2.5 13.5H14.5M4.275 8.217L10.492 2L12.614 4.121L6.397 10.338L3.83 10.894L4.275 8.217Z"
+                                    stroke="#000000"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
                           ) : (
                             <div className="flex flex-col justify-center items-center gap-2">
                               <svg

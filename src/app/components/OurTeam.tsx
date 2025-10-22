@@ -35,7 +35,7 @@ const OurTeam = () => {
 
   if (loading) {
     return (
-      <div className="our_team flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-4 md:px-20 bg-black">
+      <div className="our_team flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-8 py-10 bg-black">
         <div className="flex flex-col items-start gap-5">
           <div className="self-stretch text-white font-['Playfair Display'] text-[2rem] md:text-[3.5rem] leading-[120%]">
             Our People
@@ -50,7 +50,7 @@ const OurTeam = () => {
 
   if (managers.length === 0) {
     return (
-      <div className="our_team flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-4 md:px-20 bg-black">
+      <div className="our_team flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-8 py-10 bg-black">
         <div className="flex flex-col items-start gap-5">
           <div className="self-stretch text-white font-['Playfair Display'] text-[2rem] md:text-[3.5rem] leading-[120%]">
             Our People
@@ -67,7 +67,7 @@ const OurTeam = () => {
   const duplicatedManagers = [...managers, ...managers];
 
   return (
-    <div className="w-full flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-4 md:px-20 bg-black">
+    <div className="w-full flex flex-col items-start pt-[4.9375rem] pb-[7.75rem] px-8 py-10 bg-black">
       <div className="w-full flex flex-col items-start gap-5">
         <div className="self-stretch text-white font-['Playfair Display'] text-[2rem] md:text-[3.5rem] leading-[120%]">
           Our People

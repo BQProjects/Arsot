@@ -73,7 +73,7 @@ export default function AdminLogin() {
               Email ID
             </div>
             <input
-              type="text"
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex items-center p-4 w-[507px] h-11 border border-[#d9d9d9] text-white font-['Montserrat'] leading-[160%] bg-transparent"

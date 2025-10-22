@@ -348,10 +348,25 @@ const CrewBriefAdminScreen = () => {
                         alt="Banner preview"
                         className="object-cover rounded"
                       />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded flex items-center justify-center">
-                        <button type="button" className="text-white">
-                          Change Banner
-                        </button>
+                      <div className="absolute inset-0 bg-[#AFAFAF] opacity-0 hover:opacity-80 transition-opacity duration-300 rounded flex flex-col items-center justify-center">
+                        <label
+                          className="w-24 text-black text-center items-center font-medium font-['Montserrat'] text-xs leading-[150%] cursor-pointer"
+                          onClick={openBannerPicker}
+                        >
+                          Click to change photo
+                        </label>
+                        <svg
+                          width={17}
+                          height={16}
+                          viewBox="0 0 17 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.5 13.5H14.5M4.275 8.217L10.492 2L12.614 4.121L6.397 10.338L3.83 10.894L4.275 8.217Z"
+                            stroke="#000000"
+                          />
+                        </svg>
                       </div>
                     </div>
                   ) : (

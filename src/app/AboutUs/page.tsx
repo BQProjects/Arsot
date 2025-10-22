@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import OurTeam from "../components/OurTeam";
+import PressSection from "../components/PressSection";
 
 const AboutTitle = () => (
   <div className="about_title flex flex-col items-center w-full max-w-6xl px-4">
@@ -102,6 +103,8 @@ export default function AboutUs() {
       <OurStory />
 
       <OurTeam />
+
+      <PressSection />
 
       <Footer />
     </div>

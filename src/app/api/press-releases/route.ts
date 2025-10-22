@@ -36,9 +36,7 @@ export async function POST(request: NextRequest) {
     let summary = "";
     for (const section of sections) {
       if (section.type === "paragraph" && section.content) {
-        summary =
-          section.content.substring(0, 100) +
-          (section.content.length > 100 ? "..." : "");
+        summary = section.content;
         break;
       }
     }
