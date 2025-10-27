@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,16 +11,14 @@ export default function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
-    console.log("🔄 Starting login attempt...");
-
     try {
-      console.log("🔄 Sending login request to /api/auth");
       const response = await fetch("/api/auth", {
         method: "POST",
         headers: {
@@ -28,54 +27,20 @@ export default function AdminLogin() {
         body: JSON.stringify({ email, password }),
       });
 
-      console.log("🔄 Response status:", response.status);
-      console.log(
-        "🔄 Response headers:",
-        Object.fromEntries(response.headers.entries())
-      );
-
       const data = await response.json();
-      console.log("🔄 Response data:", data);
 
       if (response.ok) {
-        console.log(
-          "✅ Login successful, setting session storage and redirecting"
-        );
-
-        // Store token in sessionStorage
-        sessionStorage.setItem("adminToken", data.token);
-        console.log("🔄 Token stored in sessionStorage");
-
-        // Store user data in sessionStorage
-        const userDataString = JSON.stringify(data.user);
-        sessionStorage.setItem("adminUser", userDataString);
-        console.log("🔄 User data stored in sessionStorage:", userDataString);
-
-        // Small delay to ensure data is saved
-        await new Promise((resolve) => setTimeout(resolve, 200));
-
-        console.log("🔄 Redirecting to dashboard...");
-
-        // Use window.location.replace for a hard redirect
-        window.location.replace("/admin/Dashboard");
+        document.cookie = `adminToken=${data.token}; path=/; max-age=604800; samesite=strict`;
+        localStorage.setItem("adminUser", JSON.stringify(data.user));
+        router.push("/admin/Dashboard");
       } else {
-        console.log("❌ Login failed:", data.error);
         setError(data.error || "Login failed");
       }
     } catch (err) {
-      console.error("❌ Network/Request error:", err);
-      if (err instanceof Error) {
-        console.error("Error message:", err.message);
-        console.error("Error stack:", err.stack);
-      }
-      setError(
-        `Network error: ${
-          err instanceof Error ? err.message : "Unknown error"
-        }. Please try again.`
-      );
+      console.error("Login error:", err);
+      setError("Network error. Please try again.");
     } finally {
       setIsLoading(false);
-      console.log("🔄 Login attempt completed");
     }
   };
 

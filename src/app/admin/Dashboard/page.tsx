@@ -18,13 +18,13 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     // Check if user is logged in
-    const token = sessionStorage.getItem("adminToken");
-    const userData = sessionStorage.getItem("adminUser");
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("adminToken="))
+      ?.split("=")[1];
+    const userData = localStorage.getItem("adminUser");
 
     if (!token || !userData) {
-      console.log(
-        "❌ No token or user data found in sessionStorage. Redirecting to login."
-      );
       router.push("/admin");
       return;
     }
@@ -32,9 +32,8 @@ export default function AdminDashboard() {
     try {
       const parsedUser = JSON.parse(userData);
       setUser(parsedUser);
-      console.log("✅ User data loaded from sessionStorage:", parsedUser);
     } catch (error) {
-      console.error("❌ Error parsing user data from sessionStorage:", error);
+      console.error("Error parsing user data:", error);
       router.push("/admin");
     }
 

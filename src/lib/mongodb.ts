@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-const MONGODB_URI =
-  "mongodb+srv://Arsot:K%40L2Um%2A%21QC0cUffzq@cluster0.vy5hzeu.mongodb.net/arsot?retryWrites=true&w=majority";
+
+const MONGODB_URI = process.env.MONGO_DB_URI!;
 
 if (!MONGODB_URI) {
   throw new Error(
@@ -29,10 +29,7 @@ if (!global.mongoose) {
 }
 
 async function dbConnect() {
-  console.log("🔄 dbConnect called");
-
   if (cached.conn) {
-    console.log("✅ Using cached MongoDB connection");
     return cached.conn;
   }
 
@@ -41,27 +38,14 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    console.log(
-      "🔄 Creating new MongoDB connection to:",
-      MONGODB_URI.substring(0, 50) + "..."
-    );
-    cached.promise = mongoose
-      .connect(MONGODB_URI, opts)
-      .then((mongoose) => {
-        console.log("✅ MongoDB connection established successfully");
-        return mongoose;
-      })
-      .catch((error) => {
-        console.error("❌ MongoDB connection failed:", error);
-        throw error;
-      });
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      return mongoose;
+    });
   }
 
   try {
     cached.conn = await cached.promise;
-    console.log("✅ MongoDB connection ready");
   } catch (e) {
-    console.error("❌ Error in dbConnect:", e);
     cached.promise = null;
     throw e;
   }

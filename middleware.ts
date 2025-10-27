@@ -29,7 +29,7 @@ export function middleware(request: NextRequest) {
 
     try {
       // Verify token
-      const decoded = jwt.verify(token, "bdcff81d27bb513a6eb30d7093cfad5474691826702ed1466500e5a4446171a664769ea3546f14f07c0623748059d75446e359beddf4ef022523677596fd2c58") as JWTPayload;
+      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JWTPayload;
 
       // Check if user has admin role
       if (decoded.role !== "admin") {
