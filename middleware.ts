@@ -29,7 +29,10 @@ export async function middleware(request: NextRequest) {
 
     try {
       // Verify token using jose
-      const { payload } = await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET!));
+      const { payload } = await jwtVerify(
+        token,
+        new TextEncoder().encode(process.env.JWT_SECRET!)
+      );
       const decoded = payload as unknown as JWTPayload;
 
       // Check if user has admin role
