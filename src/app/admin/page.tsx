@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +10,6 @@ export default function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,9 +39,32 @@ export default function AdminLogin() {
 
       if (response.ok) {
         console.log("✅ Login successful, setting cookie and redirecting");
-        document.cookie = `adminToken=${data.token}; path=/; max-age=604800; samesite=lax`;
-        localStorage.setItem("adminUser", JSON.stringify(data.user));
-        router.push("/admin/Dashboard");
+        
+        // Set cookie
+        const cookieString = `adminToken=${data.token}; path=/; max-age=604800; samesite=lax`;
+        document.cookie = cookieString;
+        console.log("🔄 Cookie set:", cookieString);
+        
+        // Verify cookie was set
+        const cookieCheck = document.cookie.includes("adminToken=");
+        console.log("🔄 Cookie verification:", cookieCheck);
+        
+        // Set localStorage
+        const userDataString = JSON.stringify(data.user);
+        localStorage.setItem("adminUser", userDataString);
+        console.log("🔄 localStorage set:", userDataString);
+        
+        // Verify localStorage was set
+        const storageCheck = localStorage.getItem("adminUser");
+        console.log("🔄 localStorage verification:", !!storageCheck);
+        
+        // Small delay to ensure data is saved
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        console.log("🔄 Redirecting to dashboard...");
+        
+        // Use window.location.replace for a hard redirect
+        window.location.replace("/admin/Dashboard");
       } else {
         console.log("❌ Login failed:", data.error);
         setError(data.error || "Login failed");
