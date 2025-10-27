@@ -30,7 +30,7 @@ export default function AdminLogin() {
       const data = await response.json();
 
       if (response.ok) {
-        document.cookie = `adminToken=${data.token}; path=/; max-age=604800; samesite=strict`;
+        document.cookie = `adminToken=${data.token}; path=/; max-age=604800; samesite=lax`;
         localStorage.setItem("adminUser", JSON.stringify(data.user));
         router.push("/admin/Dashboard");
       } else {
