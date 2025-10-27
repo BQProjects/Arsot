@@ -43,7 +43,10 @@ const Header = () => {
             <span className="text-base tracking-wide">CREW BRIEF</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
-          <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <div
+            className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white"
+            onClick={() => router.push("/Quote")}
+          >
             <span className="text-base tracking-wide">QUOTE</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
@@ -54,7 +57,10 @@ const Header = () => {
             <span className="text-base tracking-wide">About Us</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>
-          <div className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white">
+          <div
+            className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white"
+            onClick={() => router.push("/ContactUs")}
+          >
             <span className="text-base tracking-wide">CONTACT US</span>
             <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </div>

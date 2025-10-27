@@ -70,7 +70,7 @@ const AdminHeader = () => {
             </div>
             <div
               className="flex flex-col items-center group font-['Montserrat'] font-medium uppercase text-white cursor-pointer"
-              onClick={() => router.push("/admin")}
+              onClick={() => router.push("/admin/ManageAdmin")}
             >
               <span className="text-base tracking-wide">Manage Admin</span>
               <div className="h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />

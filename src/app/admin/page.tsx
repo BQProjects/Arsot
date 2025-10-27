@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState("admin@arsot.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
