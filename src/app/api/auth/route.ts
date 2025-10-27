@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import { SignJWT } from "jose";
 import dbConnect from "../../../lib/mongodb";
 import User from "../../../models/User";
 
@@ -38,15 +38,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Create JWT token
-    const token = jwt.sign(
-      {
-        userId: user._id,
-        email: user.email,
-        role: user.role,
-      },
-      process.env.JWT_SECRET!,
-      { expiresIn: "7d" }
-    );
+    const token = await new SignJWT({
+      userId: user._id,
+      email: user.email,
+      role: user.role,
+    })
+      .setProtectedHeader({ alg: "HS256" })
+      .setExpirationTime("7d")
+      .sign(new TextEncoder().encode(process.env.JWT_SECRET));
 
     // Return token and user info (excluding password)
     const userResponse = {
