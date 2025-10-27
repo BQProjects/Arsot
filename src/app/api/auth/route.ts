@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         email: user.email,
         role: user.role,
       },
-      process.env.JWT_SECRET!,
+      "bdcff81d27bb513a6eb30d7093cfad5474691826702ed1466500e5a4446171a664769ea3546f14f07c0623748059d75446e359beddf4ef022523677596fd2c58",
       { expiresIn: "7d" }
     );
 
