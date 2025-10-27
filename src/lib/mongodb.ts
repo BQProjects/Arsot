@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-const MONGODB_URI = process.env.MONGO_DB_URI!;
+const MONGODB_URI =
+  "mongodb+srv://Arsot:K%40L2Um%2A%21QC0cUffzq@cluster0.vy5hzeu.mongodb.net/arsot?retryWrites=true&w=majority";
 
 if (!MONGODB_URI) {
   throw new Error(
