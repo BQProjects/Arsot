@@ -38,31 +38,24 @@ export default function AdminLogin() {
       console.log("🔄 Response data:", data);
 
       if (response.ok) {
-        console.log("✅ Login successful, setting cookie and redirecting");
-        
-        // Set cookie
-        const cookieString = `adminToken=${data.token}; path=/; max-age=604800; samesite=lax`;
-        document.cookie = cookieString;
-        console.log("🔄 Cookie set:", cookieString);
-        
-        // Verify cookie was set
-        const cookieCheck = document.cookie.includes("adminToken=");
-        console.log("🔄 Cookie verification:", cookieCheck);
-        
-        // Set localStorage
+        console.log(
+          "✅ Login successful, setting session storage and redirecting"
+        );
+
+        // Store token in sessionStorage
+        sessionStorage.setItem("adminToken", data.token);
+        console.log("🔄 Token stored in sessionStorage");
+
+        // Store user data in sessionStorage
         const userDataString = JSON.stringify(data.user);
-        localStorage.setItem("adminUser", userDataString);
-        console.log("🔄 localStorage set:", userDataString);
-        
-        // Verify localStorage was set
-        const storageCheck = localStorage.getItem("adminUser");
-        console.log("🔄 localStorage verification:", !!storageCheck);
-        
+        sessionStorage.setItem("adminUser", userDataString);
+        console.log("🔄 User data stored in sessionStorage:", userDataString);
+
         // Small delay to ensure data is saved
-        await new Promise(resolve => setTimeout(resolve, 200));
-        
+        await new Promise((resolve) => setTimeout(resolve, 200));
+
         console.log("🔄 Redirecting to dashboard...");
-        
+
         // Use window.location.replace for a hard redirect
         window.location.replace("/admin/Dashboard");
       } else {
