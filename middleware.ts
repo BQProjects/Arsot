@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import jwt from "jsonwebtoken";
+import { jwtVerify } from "jose";
 
 interface JWTPayload {
   userId: string;
@@ -10,7 +10,7 @@ interface JWTPayload {
   exp?: number;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   // Check if the request is for admin routes
   if (request.nextUrl.pathname.startsWith("/admin")) {
     // Skip middleware for login page
@@ -28,8 +28,9 @@ export function middleware(request: NextRequest) {
     }
 
     try {
-      // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JWTPayload;
+      // Verify token using jose
+      const { payload } = await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET!));
+      const decoded = payload as unknown as JWTPayload;
 
       // Check if user has admin role
       if (decoded.role !== "admin") {
@@ -49,5 +50,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/admin/:path*",
+  matcher: [],
 };
