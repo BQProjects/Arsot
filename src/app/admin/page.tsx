@@ -18,7 +18,10 @@ export default function AdminLogin() {
     setIsLoading(true);
     setError("");
 
+    console.log("🔄 Starting login attempt...");
+
     try {
+      console.log("🔄 Sending login request to /api/auth");
       const response = await fetch("/api/auth", {
         method: "POST",
         headers: {
@@ -27,20 +30,38 @@ export default function AdminLogin() {
         body: JSON.stringify({ email, password }),
       });
 
+      console.log("🔄 Response status:", response.status);
+      console.log(
+        "🔄 Response headers:",
+        Object.fromEntries(response.headers.entries())
+      );
+
       const data = await response.json();
+      console.log("🔄 Response data:", data);
 
       if (response.ok) {
+        console.log("✅ Login successful, setting cookie and redirecting");
         document.cookie = `adminToken=${data.token}; path=/; max-age=604800; samesite=lax`;
         localStorage.setItem("adminUser", JSON.stringify(data.user));
         router.push("/admin/Dashboard");
       } else {
+        console.log("❌ Login failed:", data.error);
         setError(data.error || "Login failed");
       }
     } catch (err) {
-      console.error("Login error:", err);
-      setError("Network error. Please try again.");
+      console.error("❌ Network/Request error:", err);
+      if (err instanceof Error) {
+        console.error("Error message:", err.message);
+        console.error("Error stack:", err.stack);
+      }
+      setError(
+        `Network error: ${
+          err instanceof Error ? err.message : "Unknown error"
+        }. Please try again.`
+      );
     } finally {
       setIsLoading(false);
+      console.log("🔄 Login attempt completed");
     }
   };
 
