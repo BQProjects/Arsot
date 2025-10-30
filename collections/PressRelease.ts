@@ -15,13 +15,13 @@ export const PressRelease: CollectionConfig = {
       required: true,
     },
     {
-      name: "date",
-      type: "text",
-    },
-    {
       name: "banner",
       type: "upload",
       relationTo: "media",
+    },
+    {
+      name: "date",
+      type: "text",
     },
     {
       name: "summary",
@@ -90,6 +90,6 @@ export const PressRelease: CollectionConfig = {
           ],
         },
       ],
-    }
+    },
   ],
 };
